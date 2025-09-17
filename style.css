@@ -30,14 +30,14 @@ header img {
 header h1 {
 	font-size: 2.2rem;
 	margin: 0 0 8px 0;
-	color: #111; /* Black heading */
+	color: #e0e0e0; /* Black heading */
 }
 
 header p {
 	font-size: 1.1rem;
 	max-width: 500px;
 	margin: 0 auto;
-	color: #111; /* Black text for description */
+	color: #e0e0e0; /* Black text for description */
 	font-family: 'Rubik', Arial, sans-serif; /* Google Font for header description */
 }
 
