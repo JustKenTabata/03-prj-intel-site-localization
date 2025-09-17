@@ -1,0 +1,74 @@
+/* Add your CSS here */
+body {
+	background-color: #e0e0e0; /* Light gray background for the whole page */
+}
+/* Style for header and hero section */
+header {
+	background-color: #0071c5; /* Intel blue */
+	padding: 32px 0 24px 0;
+	text-align: center;
+}
+
+header p:hover {
+	font-size: 2.2rem;
+  transition: font-size 0.4s ease;
+}
+
+header div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+
+header img {
+	width: 120px; /* Resize the Intel logo */
+	height: auto;
+	margin-bottom: 12px;
+}
+
+header h1 {
+	font-size: 2.2rem;
+	margin: 0 0 8px 0;
+	color: #111; /* Black heading */
+}
+
+header p {
+	font-size: 1.1rem;
+	max-width: 500px;
+	margin: 0 auto;
+	color: #111; /* Black text for description */
+	font-family: 'Rubik', Arial, sans-serif; /* Google Font for header description */
+}
+
+/* Style for timeline cards */
+section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	margin: 32px 0;
+}
+section > div {
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	width: 320px; /* Increased width for large screens */
+	padding: 28px; /* Increased padding for more space */
+	text-align: center;
+	transition: box-shadow 0.2s;
+}
+
+section h2 {
+	color: #0071c5; /* Intel blue for year */
+}
+
+section > div:hover {
+	box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+section img {
+	width: 300px;
+	height: auto;
+	margin-bottom: 8px;
+}
