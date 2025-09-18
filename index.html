@@ -17,21 +17,19 @@
   <script>
     // Auto-detect language and adjust layout direction
     function setDirectionByLang() {
-      // Get the <html> element
       var html = document.documentElement;
-      // Detect language (from lang attribute or Google Translate)
       var lang = html.lang || navigator.language || navigator.userLanguage;
-      // List of RTL languages
       var rtlLangs = ['ar', 'he', 'fa', 'ur'];
-      // Check if language is RTL
-      var isRTL = rtlLangs.some(function(l) { return lang.startsWith(l); });
-      // Set direction
-      html.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
-      document.body.style.direction = isRTL ? 'rtl' : 'ltr';
+      // Only change to LTR if the lang attribute changes to a non-RTL language
+      if (rtlLangs.some(function(l) { return lang.startsWith(l); })) {
+        html.setAttribute('dir', 'rtl');
+        document.body.style.direction = 'rtl';
+      } else {
+        html.setAttribute('dir', 'ltr');
+        document.body.style.direction = 'ltr';
+      }
     }
-    // Run on page load
-    window.addEventListener('DOMContentLoaded', setDirectionByLang);
-    // Also run when Google Translate changes the language
+    // Run only when the lang attribute changes (e.g., by translation)
     var observer = new MutationObserver(setDirectionByLang);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   </script>
@@ -234,7 +232,7 @@
           <h5 class="modal-title" id="infoModalLabel">More About Intel Sustainability</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" dir="ltr" class="text-start">
           Intel is committed to building a sustainable future through innovation, community engagement, and global impact. Learn more about our initiatives and how you can get involved!
         </div>
         <div class="modal-footer">
