@@ -15,6 +15,22 @@
 <html lang="en" dir="rtl">
 <head>
   <script>
+    // Auto-switch timeline card order based on language direction
+    function setTimelineDirection() {
+      var html = document.documentElement;
+      var timelineSection = document.querySelector('main section');
+      if (!timelineSection) return;
+      // List of RTL languages
+      var rtlLangs = ['ar', 'he', 'fa', 'ur'];
+      var lang = html.lang || navigator.language || navigator.userLanguage;
+      var isRTL = rtlLangs.some(function(l) { return lang.startsWith(l); });
+      timelineSection.style.flexDirection = isRTL ? 'row-reverse' : 'row';
+    }
+    window.addEventListener('DOMContentLoaded', setTimelineDirection);
+    var observer2 = new MutationObserver(setTimelineDirection);
+    observer2.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  </script>
+  <script>
     // Auto-detect language and adjust layout direction
     function setDirectionByLang() {
       var html = document.documentElement;
