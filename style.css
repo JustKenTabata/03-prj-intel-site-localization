@@ -48,6 +48,7 @@ section {
 	justify-content: center;
 	gap: 20px;
 	margin: 32px 0;
+	flex-direction: row-reverse !important; /* Always right-to-left order */
 }
 section > div {
 	background: #fff;
