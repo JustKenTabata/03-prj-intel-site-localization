@@ -22,11 +22,11 @@
       var rtlLangs = ['ar', 'he', 'fa', 'ur'];
       // Only change to LTR if the lang attribute changes to a non-RTL language
       if (rtlLangs.some(function(l) { return lang.startsWith(l); })) {
-        html.setAttribute('dir', 'rtl');
-        document.body.style.direction = 'rtl';
-      } else {
         html.setAttribute('dir', 'ltr');
         document.body.style.direction = 'ltr';
+      } else {
+        html.setAttribute('dir', 'rtl');
+        document.body.style.direction = 'rtl';
       }
     }
     // Run only when the lang attribute changes (e.g., by translation)
